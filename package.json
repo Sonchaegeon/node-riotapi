@@ -1,0 +1,26 @@
+{
+  "name": "node-riotapi",
+  "version": "0.0.1",
+  "description": "This library is a Riot open API library that can be used in the Node.js environment.",
+  "main": "dist/riot.js",
+  "keywords": [
+    "riot",
+    "api",
+    "riot api",
+    "league of legends",
+    "lol"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sonchaegeon/riot-api.git"
+  },
+  "author": "sonchaegeon <thscorjs1002@naver.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sonchaegeon/riot-api/issues"
+  },
+  "homepage": "https://github.com/Sonchaegeon/riot-api#readme"
+}
