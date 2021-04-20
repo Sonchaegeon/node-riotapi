@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sonchaegeon/riot-api.git"
+    "url": "git+https://github.com/Sonchaegeon/node-riotapi.git"
   },
   "author": "sonchaegeon <thscorjs1002@naver.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Sonchaegeon/riot-api/issues"
+    "url": "https://github.com/Sonchaegeon/node-riotapi/issues"
   },
-  "homepage": "https://github.com/Sonchaegeon/riot-api#readme"
+  "homepage": "https://github.com/Sonchaegeon/node-riotapi#readme"
 }
