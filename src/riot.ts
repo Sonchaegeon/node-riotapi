@@ -15,7 +15,7 @@ export default class Riot {
     });
   }
 
-  public async getSummonersById(summonerName: string) {
+  public async getSummonerById(summonerName: string) {
     const { data } = await this.api.get(
       `/lol/summoner/v4/summoners/by-name/${summonerName}`,
     );
