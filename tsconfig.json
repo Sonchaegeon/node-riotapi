@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "lib": ["ES6", "ES5", "DOM"],
+    "experimentalDecorators": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "strictNullChecks": false,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true
+  }
+}
