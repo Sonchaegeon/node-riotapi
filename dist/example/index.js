@@ -17,11 +17,10 @@ const riot = new riot_1.default({
     apiKey: '',
     region: 'KR',
 });
-function getSummonersById() {
+function getSummonerById() {
     return __awaiter(this, void 0, void 0, function* () {
-        const summonerInfo = yield riot.getSummonersById('hide on bush');
+        const summonerInfo = yield riot.getSummonerById('hide on bush');
         console.log(summonerInfo);
     });
 }
-getSummonersById();
-//# sourceMappingURL=index.js.map
+getSummonerById();
