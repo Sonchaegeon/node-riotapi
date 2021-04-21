@@ -12,22 +12,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = __importDefault(require("axios"));
-class Riot {
-    constructor({ apiKey, region }) {
-        this.key = apiKey;
-        this.region = region;
-        this.api = axios_1.default.create({
-            baseURL: 'https://kr.api.riotgames.com',
-            params: { api_key: apiKey },
-        });
-    }
-    getSummonersById(summonerName) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.api.get(`/lol/summoner/v4/summoners/by-name/${summonerName}`);
-            return data;
-        });
-    }
+const riot_1 = __importDefault(require("../riot"));
+const riot = new riot_1.default({
+    apiKey: '',
+    region: 'KR',
+});
+function getSummonersById() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const summonerInfo = yield riot.getSummonersById('hide on bush');
+        console.log(summonerInfo);
+    });
 }
-exports.default = Riot;
-//# sourceMappingURL=riot.js.map
+getSummonersById();
+//# sourceMappingURL=index.js.map
