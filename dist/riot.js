@@ -22,7 +22,7 @@ class Riot {
             params: { api_key: apiKey },
         });
     }
-    getSummonersById(summonerName) {
+    getSummonerById(summonerName) {
         return __awaiter(this, void 0, void 0, function* () {
             const { data } = yield this.api.get(`/lol/summoner/v4/summoners/by-name/${summonerName}`);
             return data;
@@ -30,4 +30,3 @@ class Riot {
     }
 }
 exports.default = Riot;
-//# sourceMappingURL=riot.js.map
