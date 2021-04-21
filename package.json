@@ -11,7 +11,7 @@
     "lol"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node src/example/index.ts"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/Sonchaegeon/node-riotapi/issues"
   },
-  "homepage": "https://github.com/Sonchaegeon/node-riotapi#readme"
+  "homepage": "https://github.com/Sonchaegeon/node-riotapi#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/node": "^14.14.41"
+  }
 }
