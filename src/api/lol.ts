@@ -1,17 +1,18 @@
 import axios, { AxiosInstance } from 'axios';
-import { IRiotArg } from './interfaces';
-import { IGetSummoners } from './interfaces/response/summoner-v4';
+import { ILolArg } from '../interfaces';
+import { IGetSummoners } from '../interfaces/response/summoner-v4';
 
-export default class Riot {
+export default class Lol {
   private api: AxiosInstance;
 
-  constructor({ apiKey }: IRiotArg) {
+  constructor({ apiKey, region }: ILolArg) {
     this.api = axios.create({
-      baseURL: 'https://kr.api.riotgames.com',
+      baseURL: `https://${region}.api.riotgames.com`,
       params: { api_key: apiKey },
     });
   }
 
+  // Summoner-v4
   public async getSummonerByName(summonerName: string): Promise<IGetSummoners> {
     const { data } = await this.api.get(
       `/lol/summoner/v4/summoners/by-name/${encodeURI(summonerName)}`,
