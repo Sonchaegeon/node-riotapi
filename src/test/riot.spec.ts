@@ -24,4 +24,15 @@ describe('node-riotapi', () => {
       expect(summonerInfo.profileIconId).toBe(23);
     });
   });
+
+  describe('summoner.getSummonerByPuuid', () => {
+    it('should be return summoner', async () => {
+      const summonerInfo = await riot.getSummonerByPuuid(
+        'SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q',
+      );
+      expect(summonerInfo).toBeDefined();
+      expect(summonerInfo.name).toBe('대덕SW마이스터고');
+      expect(summonerInfo.profileIconId).toBe(23);
+    });
+  });
 });
