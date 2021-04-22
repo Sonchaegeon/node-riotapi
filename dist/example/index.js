@@ -8,19 +8,48 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const riot_1 = __importDefault(require("../riot"));
-const riot = new riot_1.default({
-    apiKey: '',
-    region: 'KR',
+const __1 = require("..");
+const apiKey = 'RGAPI-9401e89e-758b-4c52-9a6b-7e2de0758e25';
+const riot = new __1.Riot({
+    apiKey,
+    region: 'asia',
 });
-function getSummonerById() {
+const lol = new __1.Lol({
+    apiKey,
+    region: 'kr',
+});
+// Summoner
+function getSummonerByName() {
     return __awaiter(this, void 0, void 0, function* () {
-        const summonerInfo = yield riot.getSummonerById('hide on bush');
+        const summonerInfo = yield lol.getSummonerByName('대덕sw마이스터고');
         console.log(summonerInfo);
     });
 }
-getSummonerById();
+function getSummonerByAccount() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const summonerInfo = yield lol.getSummonerByAccount('5S842iiXcGAN5T7xQMSskgrUhKBLX8Oz-n9hv492cTDBvZY');
+        console.log(summonerInfo);
+    });
+}
+function getSummonerByPuuid() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const summonerInfo = yield lol.getSummonerByPuuid('SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q');
+        console.log(summonerInfo);
+    });
+}
+function getSummoner() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const summonerInfo = yield lol.getSummoner('zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU');
+        console.log(summonerInfo);
+    });
+}
+// Account
+function getAccountByPuuid() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const accountInfo = yield riot.getAccountByPuuid('SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q');
+        console.log(accountInfo);
+    });
+}
+getSummonerByName();
+getAccountByPuuid();

@@ -15,16 +15,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 class Riot {
     constructor({ apiKey, region }) {
-        this.key = apiKey;
-        this.region = region;
         this.api = axios_1.default.create({
-            baseURL: 'https://kr.api.riotgames.com',
+            baseURL: `https://${region}.api.riotgames.com`,
             params: { api_key: apiKey },
         });
     }
-    getSummonerById(summonerName) {
+    // Account-v1
+    getAccountByPuuid(puuid) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.api.get(`/lol/summoner/v4/summoners/by-name/${summonerName}`);
+            const { data } = yield this.api.get(`/riot/account/v1/accounts/by-puuid/${puuid}`);
             return data;
         });
     }
