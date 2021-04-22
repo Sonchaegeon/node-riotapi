@@ -23,4 +23,11 @@ async function getSummonerByPuuid() {
   console.log(summonerInfo);
 }
 
-getSummonerByPuuid();
+async function getSummoner() {
+  const summonerInfo = await riot.getSummoner(
+    'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+  );
+  console.log(summonerInfo);
+}
+
+getSummoner();
