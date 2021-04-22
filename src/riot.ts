@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import { IRiotArg } from './interfaces';
-import { IGetSummonersByNameRes } from './interfaces/response/summoner-v4';
+import { IGetSummoners } from './interfaces/response/summoner-v4';
 
 export default class Riot {
   private api: AxiosInstance;
@@ -12,11 +12,36 @@ export default class Riot {
     });
   }
 
-  public async getSummonerByName(
-    summonerName: string,
-  ): Promise<IGetSummonersByNameRes> {
+  public async getSummonerByName(summonerName: string): Promise<IGetSummoners> {
     const { data } = await this.api.get(
       `/lol/summoner/v4/summoners/by-name/${encodeURI(summonerName)}`,
+    );
+    return data;
+  }
+
+  public async getSummonerByAccount(
+    encryptedAccountId: string,
+  ): Promise<IGetSummoners> {
+    const { data } = await this.api.get(
+      `/lol/summoner/v4/summoners/by-account/${encryptedAccountId}`,
+    );
+    return data;
+  }
+
+  public async getSummonerByPuuid(
+    encryptedPUUID: string,
+  ): Promise<IGetSummoners> {
+    const { data } = await this.api.get(
+      `/lol/summoner/v4/summoners/by-puuid/${encryptedPUUID}`,
+    );
+    return data;
+  }
+
+  public async getSummoner(
+    encryptedSummonerId: string,
+  ): Promise<IGetSummoners> {
+    const { data } = await this.api.get(
+      `/lol/summoner/v4/summoners/${encryptedSummonerId}`,
     );
     return data;
   }

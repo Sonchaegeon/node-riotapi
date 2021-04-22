@@ -1,7 +1,7 @@
 import Riot from '../riot';
 
 const riot = new Riot({
-  apiKey: '',
+  apiKey: 'RGAPI-7d85968f-3386-481d-a88e-33cebb64130a',
 });
 
 async function getSummonerByName() {
@@ -9,4 +9,25 @@ async function getSummonerByName() {
   console.log(summonerInfo);
 }
 
-getSummonerByName();
+async function getSummonerByAccount() {
+  const summonerInfo = await riot.getSummonerByAccount(
+    '5S842iiXcGAN5T7xQMSskgrUhKBLX8Oz-n9hv492cTDBvZY',
+  );
+  console.log(summonerInfo);
+}
+
+async function getSummonerByPuuid() {
+  const summonerInfo = await riot.getSummonerByPuuid(
+    'SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q',
+  );
+  console.log(summonerInfo);
+}
+
+async function getSummoner() {
+  const summonerInfo = await riot.getSummoner(
+    'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+  );
+  console.log(summonerInfo);
+}
+
+getSummoner();

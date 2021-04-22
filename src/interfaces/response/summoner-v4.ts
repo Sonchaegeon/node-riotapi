@@ -1,4 +1,4 @@
-interface IGetSummonersByNameRes {
+interface IGetSummoners {
   id: string;
   accountId: string;
   puuid: string;
@@ -8,4 +8,4 @@ interface IGetSummonersByNameRes {
   summonerLevel: number;
 }
 
-export { IGetSummonersByNameRes };
+export { IGetSummoners };
