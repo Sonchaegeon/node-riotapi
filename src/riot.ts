@@ -36,4 +36,13 @@ export default class Riot {
     );
     return data;
   }
+
+  public async getSummoner(
+    encryptedSummonerId: string,
+  ): Promise<IGetSummoners> {
+    const { data } = await this.api.get(
+      `/lol/summoner/v4/summoners/${encryptedSummonerId}`,
+    );
+    return data;
+  }
 }
