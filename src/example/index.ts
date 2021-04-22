@@ -16,4 +16,11 @@ async function getSummonerByAccount() {
   console.log(summonerInfo);
 }
 
-getSummonerByAccount();
+async function getSummonerByPuuid() {
+  const summonerInfo = await riot.getSummonerByPuuid(
+    'SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q',
+  );
+  console.log(summonerInfo);
+}
+
+getSummonerByPuuid();
