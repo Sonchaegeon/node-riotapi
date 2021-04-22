@@ -2,12 +2,11 @@ import Riot from '../riot';
 
 const riot = new Riot({
   apiKey: '',
-  region: 'KR',
 });
 
-async function getSummonerById() {
-  const summonerInfo = await riot.getSummonerById('hide on bush');
+async function getSummonerByName() {
+  const summonerInfo = await riot.getSummonerByName('대덕sw마이스터고');
   console.log(summonerInfo);
 }
 
-getSummonerById();
+getSummonerByName();
