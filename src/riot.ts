@@ -27,4 +27,13 @@ export default class Riot {
     );
     return data;
   }
+
+  public async getSummonerByPuuid(
+    encryptedPUUID: string,
+  ): Promise<IGetSummoners> {
+    const { data } = await this.api.get(
+      `/lol/summoner/v4/summoners/by-puuid/${encryptedPUUID}`,
+    );
+    return data;
+  }
 }
