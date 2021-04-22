@@ -1,23 +1,22 @@
 import axios, { AxiosInstance } from 'axios';
 import { IRiotArg } from './interfaces';
+import { IGetSummonersByNameRes } from './interfaces/response/summoner-v4';
 
 export default class Riot {
-  private key: string;
   private api: AxiosInstance;
-  private region: string;
 
-  constructor({ apiKey, region }: IRiotArg) {
-    this.key = apiKey;
-    this.region = region;
+  constructor({ apiKey }: IRiotArg) {
     this.api = axios.create({
       baseURL: 'https://kr.api.riotgames.com',
       params: { api_key: apiKey },
     });
   }
 
-  public async getSummonerById(summonerName: string) {
+  public async getSummonerByName(
+    summonerName: string,
+  ): Promise<IGetSummonersByNameRes> {
     const { data } = await this.api.get(
-      `/lol/summoner/v4/summoners/by-name/${summonerName}`,
+      `/lol/summoner/v4/summoners/by-name/${encodeURI(summonerName)}`,
     );
     return data;
   }
