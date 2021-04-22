@@ -1,7 +1,8 @@
 # node-riotapi
 
+> 본 라이브러리는 Node.js 환경에서 이용할 수 있는 Riot 오픈 API 라이브러리입니다.
+
 [![Latest Stable Version](https://img.shields.io/npm/v/node-riotapi.svg)](https://www.npmjs.com/package/node-riotapi) [![License](https://img.shields.io/npm/l/node-riotapi.svg)](https://www.npmjs.com/package/node-riotapi) [![NPM Downloads](https://img.shields.io/npm/dt/node-riotapi.svg)](https://www.npmjs.com/package/node-riotapi)
-본 라이브러리는 Node.js 환경에서 이용할 수 있는 Riot 오픈 API 라이브러리입니다.
 
 ## 설치
 
