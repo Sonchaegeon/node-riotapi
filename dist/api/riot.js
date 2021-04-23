@@ -27,5 +27,11 @@ class Riot {
             return data;
         });
     }
+    getAccountByRiotId(gameName, tagLine) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { data } = yield this.api.get(`/riot/account/v1/accounts/by-riot-id/${encodeURI(gameName)}/${tagLine}`);
+            return data;
+        });
+    }
 }
 exports.default = Riot;

@@ -51,5 +51,11 @@ function getAccountByPuuid() {
         console.log(accountInfo);
     });
 }
+function getAccountByRiotId() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const accountInfo = yield riot.getAccountByRiotId('대덕sw마이스터고', 'KR1');
+        console.log(accountInfo);
+    });
+}
 getSummonerByName();
-getAccountByPuuid();
+getAccountByRiotId();

@@ -64,5 +64,14 @@ describe('node-riotapi', () => {
                 expect(accountInfo.tagLine).toBe('KR1');
             }));
         });
+        describe('account.getAccountByRiotId', () => {
+            it('should be return account', () => __awaiter(void 0, void 0, void 0, function* () {
+                const accountInfo = yield riot.getAccountByRiotId('대덕sw마이스터고', 'KR1');
+                expect(accountInfo).toBeDefined();
+                expect(accountInfo.gameName).toBe('대덕SW마이스터고');
+                expect(accountInfo.puuid).toBe('SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q');
+                expect(accountInfo.tagLine).toBe('KR1');
+            }));
+        });
     });
 });
