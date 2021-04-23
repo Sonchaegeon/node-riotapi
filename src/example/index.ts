@@ -47,5 +47,10 @@ async function getAccountByPuuid() {
   console.log(accountInfo);
 }
 
+async function getAccountByRiotId() {
+  const accountInfo = await riot.getAccountByRiotId('대덕sw마이스터고', 'KR1');
+  console.log(accountInfo);
+}
+
 getSummonerByName();
-getAccountByPuuid();
+getAccountByRiotId();
