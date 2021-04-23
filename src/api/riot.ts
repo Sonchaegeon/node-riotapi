@@ -19,4 +19,14 @@ export default class Riot {
     );
     return data;
   }
+
+  public async getAccountByRiotId(
+    gameName: string,
+    tagLine: string,
+  ): Promise<IGetAccounts> {
+    const { data } = await this.api.get(
+      `/riot/account/v1/accounts/by-riot-id/${encodeURI(gameName)}/${tagLine}`,
+    );
+    return data;
+  }
 }
