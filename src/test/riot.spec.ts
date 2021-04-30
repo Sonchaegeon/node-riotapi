@@ -1,7 +1,7 @@
 import { Riot, Lol } from '..';
 
 describe('node-riotapi', () => {
-  const apiKey = (process.env.API_KEY as unknown) as string;
+  const apiKey = 'RGAPI-56d52320-28b9-4b14-b19e-64a6c1f85452';
 
   const lol = new Lol({
     apiKey,

@@ -8,5 +8,3 @@ const riot_1 = __importDefault(require("./api/riot"));
 exports.Riot = riot_1.default;
 const lol_1 = __importDefault(require("./api/lol"));
 exports.Lol = lol_1.default;
-const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
