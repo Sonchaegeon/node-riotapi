@@ -33,6 +33,7 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/node": "^14.14.41",
+    "dotenv": "^8.2.0",
     "ts-jest": "^26.5.5"
   }
 }
