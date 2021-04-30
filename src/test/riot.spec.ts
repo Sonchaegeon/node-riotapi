@@ -1,7 +1,7 @@
 import { Riot, Lol } from '..';
 
 describe('node-riotapi', () => {
-  const apiKey = 'RGAPI-9401e89e-758b-4c52-9a6b-7e2de0758e25';
+  const apiKey = (process.env.API_KEY as unknown) as string;
 
   const lol = new Lol({
     apiKey,
@@ -84,6 +84,18 @@ describe('node-riotapi', () => {
           'SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q',
         );
         expect(accountInfo.tagLine).toBe('KR1');
+      });
+    });
+  });
+
+  describe('Champion-mastery-v4', () => {
+    describe('champion-mastery.getChampionMasteriesBySummoner', () => {
+      it('should be return champion-mastery', async () => {
+        const championMasteryInfo = await lol.getChampionMasteriesBySummoner(
+          'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+        );
+        expect(championMasteryInfo).toBeDefined();
+        expect(championMasteryInfo).toBeInstanceOf(Array);
       });
     });
   });
