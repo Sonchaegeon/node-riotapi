@@ -57,4 +57,14 @@ export default class Lol {
     );
     return data;
   }
+
+  public async getChampionMasteriesBySummonerAndChampionId(
+    encryptedSummonerId: string,
+    championId: number,
+  ): Promise<IGetChampionMasteries> {
+    const { data } = await this.api.get(
+      `/lol/champion-mastery/v4/champion-masteries/by-summoner/${encryptedSummonerId}/by-champion/${championId}`,
+    );
+    return data;
+  }
 }
