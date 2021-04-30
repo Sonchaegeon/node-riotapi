@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const __1 = require("..");
 describe('node-riotapi', () => {
-    const apiKey = process.env.API_KEY;
+    const apiKey = 'RGAPI-56d52320-28b9-4b14-b19e-64a6c1f85452';
     const lol = new __1.Lol({
         apiKey,
         region: 'kr',
