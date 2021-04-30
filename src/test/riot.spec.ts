@@ -98,5 +98,16 @@ describe('node-riotapi', () => {
         expect(championMasteryInfo).toBeInstanceOf(Array);
       });
     });
+
+    describe('champion-mastery.getChampionMasteriesBySummonerAndChampionId', () => {
+      it('should be return champion-mastery', async () => {
+        const championMasteryInfo = await lol.getChampionMasteriesBySummonerAndChampionId(
+          'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+          245,
+        );
+        expect(championMasteryInfo).toBeDefined();
+        expect(championMasteryInfo).toBeInstanceOf(Object);
+      });
+    });
   });
 });
