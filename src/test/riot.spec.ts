@@ -109,5 +109,15 @@ describe('node-riotapi', () => {
         expect(championMasteryInfo).toBeInstanceOf(Object);
       });
     });
+
+    describe('champion-mastery.getChampionScoresBySumonner', () => {
+      it('should be return champion-score', async () => {
+        const championScoreInfo = await lol.getChampionScoresBySumonner(
+          'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+        );
+        expect(championScoreInfo).toBeDefined();
+        expect(championScoreInfo).toBeGreaterThanOrEqual(290);
+      });
+    });
   });
 });
