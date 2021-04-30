@@ -1,5 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import { ILolArg } from '../interfaces';
+import { IGetChampionMasteries } from '../interfaces/response/champion-mastery-v4';
 import { IGetSummoners } from '../interfaces/response/summoner-v4';
 
 export default class Lol {
@@ -43,6 +44,35 @@ export default class Lol {
   ): Promise<IGetSummoners> {
     const { data } = await this.api.get(
       `/lol/summoner/v4/summoners/${encryptedSummonerId}`,
+    );
+    return data;
+  }
+
+  // Champion-mastery-v4
+  public async getChampionMasteriesBySummoner(
+    encryptedSummonerId: string,
+  ): Promise<IGetChampionMasteries[]> {
+    const { data } = await this.api.get(
+      `/lol/champion-mastery/v4/champion-masteries/by-summoner/${encryptedSummonerId}`,
+    );
+    return data;
+  }
+
+  public async getChampionMasteriesBySummonerAndChampionId(
+    encryptedSummonerId: string,
+    championId: number,
+  ): Promise<IGetChampionMasteries> {
+    const { data } = await this.api.get(
+      `/lol/champion-mastery/v4/champion-masteries/by-summoner/${encryptedSummonerId}/by-champion/${championId}`,
+    );
+    return data;
+  }
+
+  public async getChampionScoresBySumonner(
+    encryptedSummonerId: string,
+  ): Promise<number> {
+    const { data } = await this.api.get(
+      `/lol/champion-mastery/v4/scores/by-summoner/${encryptedSummonerId}`,
     );
     return data;
   }

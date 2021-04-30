@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const __1 = require("..");
-const apiKey = 'RGAPI-9401e89e-758b-4c52-9a6b-7e2de0758e25';
+const apiKey = process.env.API_KEY;
 const riot = new __1.Riot({
     apiKey,
     region: 'asia',
@@ -57,5 +57,23 @@ function getAccountByRiotId() {
         console.log(accountInfo);
     });
 }
-getSummonerByName();
-getAccountByRiotId();
+// Champion-mastery
+function getChampionMasteriesBySummoner() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const championMasteryInfo = yield lol.getChampionMasteriesBySummoner('zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU');
+        console.log(championMasteryInfo);
+    });
+}
+function getChampionMasteriesBySummonerAndChampionId() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const championMasteryInfo = yield lol.getChampionMasteriesBySummonerAndChampionId('zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU', 245);
+        console.log(championMasteryInfo);
+    });
+}
+function getChampionScoresBySumonner() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const championMasteryInfo = yield lol.getChampionScoresBySumonner('zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU');
+        console.log(championMasteryInfo);
+    });
+}
+getChampionScoresBySumonner();

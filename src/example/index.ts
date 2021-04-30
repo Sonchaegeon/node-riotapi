@@ -1,6 +1,6 @@
 import { Riot, Lol } from '..';
 
-const apiKey = 'RGAPI-9401e89e-758b-4c52-9a6b-7e2de0758e25';
+const apiKey = (process.env.API_KEY as unknown) as string;
 
 const riot = new Riot({
   apiKey,
@@ -52,5 +52,27 @@ async function getAccountByRiotId() {
   console.log(accountInfo);
 }
 
-getSummonerByName();
-getAccountByRiotId();
+// Champion-mastery
+async function getChampionMasteriesBySummoner() {
+  const championMasteryInfo = await lol.getChampionMasteriesBySummoner(
+    'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+  );
+  console.log(championMasteryInfo);
+}
+
+async function getChampionMasteriesBySummonerAndChampionId() {
+  const championMasteryInfo = await lol.getChampionMasteriesBySummonerAndChampionId(
+    'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+    245,
+  );
+  console.log(championMasteryInfo);
+}
+
+async function getChampionScoresBySumonner() {
+  const championMasteryInfo = await lol.getChampionScoresBySumonner(
+    'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+  );
+  console.log(championMasteryInfo);
+}
+
+getChampionScoresBySumonner();
