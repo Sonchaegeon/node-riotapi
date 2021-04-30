@@ -45,5 +45,24 @@ class Lol {
             return data;
         });
     }
+    // Champion-mastery-v4
+    getChampionMasteriesBySummoner(encryptedSummonerId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { data } = yield this.api.get(`/lol/champion-mastery/v4/champion-masteries/by-summoner/${encryptedSummonerId}`);
+            return data;
+        });
+    }
+    getChampionMasteriesBySummonerAndChampionId(encryptedSummonerId, championId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { data } = yield this.api.get(`/lol/champion-mastery/v4/champion-masteries/by-summoner/${encryptedSummonerId}/by-champion/${championId}`);
+            return data;
+        });
+    }
+    getChampionScoresBySumonner(encryptedSummonerId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { data } = yield this.api.get(`/lol/champion-mastery/v4/scores/by-summoner/${encryptedSummonerId}`);
+            return data;
+        });
+    }
 }
 exports.default = Lol;

@@ -4,4 +4,5 @@ export default class Riot {
     private api;
     constructor({ apiKey, region }: IRiotArg);
     getAccountByPuuid(puuid: string): Promise<IGetAccounts>;
+    getAccountByRiotId(gameName: string, tagLine: string): Promise<IGetAccounts>;
 }

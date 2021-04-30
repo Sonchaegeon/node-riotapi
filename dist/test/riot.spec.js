@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const __1 = require("..");
 describe('node-riotapi', () => {
-    const apiKey = 'RGAPI-9401e89e-758b-4c52-9a6b-7e2de0758e25';
+    const apiKey = process.env.API_KEY;
     const lol = new __1.Lol({
         apiKey,
         region: 'kr',
@@ -62,6 +62,38 @@ describe('node-riotapi', () => {
                 expect(accountInfo.gameName).toBe('대덕SW마이스터고');
                 expect(accountInfo.puuid).toBe('SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q');
                 expect(accountInfo.tagLine).toBe('KR1');
+            }));
+        });
+        describe('account.getAccountByRiotId', () => {
+            it('should be return account', () => __awaiter(void 0, void 0, void 0, function* () {
+                const accountInfo = yield riot.getAccountByRiotId('대덕sw마이스터고', 'KR1');
+                expect(accountInfo).toBeDefined();
+                expect(accountInfo.gameName).toBe('대덕SW마이스터고');
+                expect(accountInfo.puuid).toBe('SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q');
+                expect(accountInfo.tagLine).toBe('KR1');
+            }));
+        });
+    });
+    describe('Champion-mastery-v4', () => {
+        describe('champion-mastery.getChampionMasteriesBySummoner', () => {
+            it('should be return champion-mastery', () => __awaiter(void 0, void 0, void 0, function* () {
+                const championMasteryInfo = yield lol.getChampionMasteriesBySummoner('zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU');
+                expect(championMasteryInfo).toBeDefined();
+                expect(championMasteryInfo).toBeInstanceOf(Array);
+            }));
+        });
+        describe('champion-mastery.getChampionMasteriesBySummonerAndChampionId', () => {
+            it('should be return champion-mastery', () => __awaiter(void 0, void 0, void 0, function* () {
+                const championMasteryInfo = yield lol.getChampionMasteriesBySummonerAndChampionId('zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU', 245);
+                expect(championMasteryInfo).toBeDefined();
+                expect(championMasteryInfo).toBeInstanceOf(Object);
+            }));
+        });
+        describe('champion-mastery.getChampionScoresBySumonner', () => {
+            it('should be return champion-score', () => __awaiter(void 0, void 0, void 0, function* () {
+                const championScoreInfo = yield lol.getChampionScoresBySumonner('zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU');
+                expect(championScoreInfo).toBeDefined();
+                expect(championScoreInfo).toBeGreaterThanOrEqual(290);
             }));
         });
     });
