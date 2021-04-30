@@ -68,4 +68,11 @@ async function getChampionMasteriesBySummonerAndChampionId() {
   console.log(championMasteryInfo);
 }
 
-getChampionMasteriesBySummonerAndChampionId();
+async function getChampionScoresBySumonner() {
+  const championMasteryInfo = await lol.getChampionScoresBySumonner(
+    'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+  );
+  console.log(championMasteryInfo);
+}
+
+getChampionScoresBySumonner();
