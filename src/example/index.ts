@@ -52,5 +52,12 @@ async function getAccountByRiotId() {
   console.log(accountInfo);
 }
 
-getSummonerByName();
-getAccountByRiotId();
+// Champion-mastery
+async function getChampionMasteriesBySummoner() {
+  const championMasteryInfo = await lol.getChampionMasteriesBySummoner(
+    'zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU',
+  );
+  console.log(championMasteryInfo);
+}
+
+getChampionMasteriesBySummoner();
