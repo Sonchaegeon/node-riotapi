@@ -28,5 +28,5 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.5
       
-      - name: NPM Tests
-        uses: anna-money/github-actions-npm@v1
+      - name: npm tests
+        run: npm test
