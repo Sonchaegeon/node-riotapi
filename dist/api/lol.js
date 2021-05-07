@@ -64,5 +64,12 @@ class Lol {
             return data;
         });
     }
+    // Champion-v3
+    getChampionRotations() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { data } = yield this.api.get(`/lol/platform/v3/champion-rotations`);
+            return data;
+        });
+    }
 }
 exports.default = Lol;

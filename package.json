@@ -1,6 +1,6 @@
 {
   "name": "node-riotapi",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "This library is a Riot open API library that can be used in the Node.js environment.",
   "main": "dist/index.js",
   "keywords": [

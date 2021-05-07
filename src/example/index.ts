@@ -1,6 +1,6 @@
 import { Riot, Lol } from '..';
 
-const apiKey = 'RGAPI-56d52320-28b9-4b14-b19e-64a6c1f85452';
+const apiKey = 'RGAPI-d751d5f4-3199-4baa-9d77-c6a69c93afce';
 
 const riot = new Riot({
   apiKey,
@@ -75,4 +75,10 @@ async function getChampionScoresBySumonner() {
   console.log(championMasteryInfo);
 }
 
-getChampionScoresBySumonner();
+// Champion-v3
+async function getChampionRotations() {
+  const championRotationInfo = await lol.getChampionRotations();
+  console.log(championRotationInfo);
+}
+
+getChampionRotations();
