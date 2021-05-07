@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const __1 = require("..");
-const apiKey = 'RGAPI-56d52320-28b9-4b14-b19e-64a6c1f85452';
+const apiKey = 'RGAPI-d751d5f4-3199-4baa-9d77-c6a69c93afce';
 const riot = new __1.Riot({
     apiKey,
     region: 'asia',
@@ -76,4 +76,11 @@ function getChampionScoresBySumonner() {
         console.log(championMasteryInfo);
     });
 }
-getChampionScoresBySumonner();
+// Champion-v3
+function getChampionRotations() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const championRotationInfo = yield lol.getChampionRotations();
+        console.log(championRotationInfo);
+    });
+}
+getChampionRotations();

@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const __1 = require("..");
 describe('node-riotapi', () => {
-    const apiKey = 'RGAPI-56d52320-28b9-4b14-b19e-64a6c1f85452';
+    const apiKey = 'RGAPI-d751d5f4-3199-4baa-9d77-c6a69c93afce';
     const lol = new __1.Lol({
         apiKey,
         region: 'kr',
@@ -59,18 +59,18 @@ describe('node-riotapi', () => {
             it('should be return account', () => __awaiter(void 0, void 0, void 0, function* () {
                 const accountInfo = yield riot.getAccountByPuuid('SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q');
                 expect(accountInfo).toBeDefined();
-                expect(accountInfo.gameName).toBe('대덕SW마이스터고');
+                expect(accountInfo.gameName).toBe('조물조물맨');
                 expect(accountInfo.puuid).toBe('SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q');
-                expect(accountInfo.tagLine).toBe('KR1');
+                expect(accountInfo.tagLine).toBe('1002');
             }));
         });
         describe('account.getAccountByRiotId', () => {
             it('should be return account', () => __awaiter(void 0, void 0, void 0, function* () {
-                const accountInfo = yield riot.getAccountByRiotId('대덕sw마이스터고', 'KR1');
+                const accountInfo = yield riot.getAccountByRiotId('조물조물맨', '1002');
                 expect(accountInfo).toBeDefined();
-                expect(accountInfo.gameName).toBe('대덕SW마이스터고');
+                expect(accountInfo.gameName).toBe('조물조물맨');
                 expect(accountInfo.puuid).toBe('SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q');
-                expect(accountInfo.tagLine).toBe('KR1');
+                expect(accountInfo.tagLine).toBe('1002');
             }));
         });
     });
@@ -94,6 +94,16 @@ describe('node-riotapi', () => {
                 const championScoreInfo = yield lol.getChampionScoresBySumonner('zTzeGkZR7C9RwzW_9xVMC2068P3HKJManaUwgZVisQ1iBBU');
                 expect(championScoreInfo).toBeDefined();
                 expect(championScoreInfo).toBeGreaterThanOrEqual(290);
+            }));
+        });
+    });
+    describe('Champion-v3', () => {
+        describe('champion-getChampionRotations', () => {
+            it('should be return champion-rotations', () => __awaiter(void 0, void 0, void 0, function* () {
+                const championRotationInfo = yield lol.getChampionRotations();
+                expect(championRotationInfo).toBeDefined();
+                expect(championRotationInfo.freeChampionIds).toBeInstanceOf(Array);
+                expect(championRotationInfo.freeChampionIdsForNewPlayers).toBeInstanceOf(Array);
             }));
         });
     });
