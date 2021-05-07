@@ -1,6 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 import { ILolArg } from '../interfaces';
 import { IGetChampionMasteries } from '../interfaces/response/champion-mastery-v4';
+import { IGetChampionRotations } from '../interfaces/response/champion-v3';
 import { IGetSummoners } from '../interfaces/response/summoner-v4';
 
 export default class Lol {
@@ -74,6 +75,12 @@ export default class Lol {
     const { data } = await this.api.get(
       `/lol/champion-mastery/v4/scores/by-summoner/${encryptedSummonerId}`,
     );
+    return data;
+  }
+
+  // Champion-v3
+  public async getChampionRotations(): Promise<IGetChampionRotations> {
+    const { data } = await this.api.get(`/lol/platform/v3/champion-rotations`);
     return data;
   }
 }
