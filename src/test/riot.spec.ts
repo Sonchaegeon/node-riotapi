@@ -1,7 +1,7 @@
 import { Riot, Lol } from '..';
 
 describe('node-riotapi', () => {
-  const apiKey = 'RGAPI-56d52320-28b9-4b14-b19e-64a6c1f85452';
+  const apiKey = 'RGAPI-d751d5f4-3199-4baa-9d77-c6a69c93afce';
 
   const lol = new Lol({
     apiKey,
@@ -64,26 +64,23 @@ describe('node-riotapi', () => {
           'SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q',
         );
         expect(accountInfo).toBeDefined();
-        expect(accountInfo.gameName).toBe('대덕SW마이스터고');
+        expect(accountInfo.gameName).toBe('조물조물맨');
         expect(accountInfo.puuid).toBe(
           'SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q',
         );
-        expect(accountInfo.tagLine).toBe('KR1');
+        expect(accountInfo.tagLine).toBe('1002');
       });
     });
 
     describe('account.getAccountByRiotId', () => {
       it('should be return account', async () => {
-        const accountInfo = await riot.getAccountByRiotId(
-          '대덕sw마이스터고',
-          'KR1',
-        );
+        const accountInfo = await riot.getAccountByRiotId('조물조물맨', '1002');
         expect(accountInfo).toBeDefined();
-        expect(accountInfo.gameName).toBe('대덕SW마이스터고');
+        expect(accountInfo.gameName).toBe('조물조물맨');
         expect(accountInfo.puuid).toBe(
           'SHNBy0tWOTMK5Z0TBLcZ4y9HVkitJejOzVo_uVeqXQPomBjWKu3NIiekWAF59nBGQiTBK9xp8fYR7Q',
         );
-        expect(accountInfo.tagLine).toBe('KR1');
+        expect(accountInfo.tagLine).toBe('1002');
       });
     });
   });
@@ -117,6 +114,19 @@ describe('node-riotapi', () => {
         );
         expect(championScoreInfo).toBeDefined();
         expect(championScoreInfo).toBeGreaterThanOrEqual(290);
+      });
+    });
+  });
+
+  describe('Champion-v3', () => {
+    describe('champion-getChampionRotations', () => {
+      it('should be return champion-rotations', async () => {
+        const championRotationInfo = await lol.getChampionRotations();
+        expect(championRotationInfo).toBeDefined();
+        expect(championRotationInfo.freeChampionIds).toBeInstanceOf(Array);
+        expect(
+          championRotationInfo.freeChampionIdsForNewPlayers,
+        ).toBeInstanceOf(Array);
       });
     });
   });
